@@ -35,6 +35,13 @@ class User extends Authenticatable
     public function getAvatarAttribute($value)
     {
         return asset($value ?: '/images/default-avatar.jpeg');
+        // return asset('storage/' . $value);
+    }
+
+    public function getBackgroundAttribute($value)
+    {
+        return asset($value ?: '/images/default-profile-banner.jpg');
+        // return asset('storage/' . $value);
     }
 
     public function setPasswordAttribute($value)

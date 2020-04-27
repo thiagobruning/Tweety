@@ -45,6 +45,26 @@
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                   for="description"
+            >
+                Description
+            </label>
+
+            <input class="border border-gray-400 p-2 w-full"
+                   type="text"
+                   name="description"
+                   id="description"
+                   value="{{ $user->description }}"
+                   required
+            >
+
+            @error('description')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
                   for="avatar"
             >
                 Avatar
@@ -65,6 +85,32 @@
             </div>
 
             @error('avatar')
+                <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+            @enderror
+        </div>
+
+        <div class="mb-6">
+            <label class="block mb-2 uppercase font-bold text-xs text-gray-700"
+                  for="background"
+            >
+                Background
+            </label>
+
+            <div class="flex">
+                <input class="border border-gray-400 p-2 w-full"
+                       type="file"
+                       name="background"
+                       id="background"
+                       accept="image/*"
+                >
+
+                <img src="{{ $user->background }}"
+                     alt="your background"
+                     width="80"
+                >
+            </div>
+
+            @error('background')
                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
         </div>
