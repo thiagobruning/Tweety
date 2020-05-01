@@ -1,5 +1,5 @@
 <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
-    <form method="POST" action="/tweets">
+    <form method="POST" action="/tweets" enctype="multipart/form-data">
         @csrf
 
         <textarea
@@ -13,13 +13,27 @@
         <hr class="my-4">
 
         <footer class="flex justify-between items-center">
-            <img
+
+            <div class="flex items-center">
+                <img
                 src="{{ current_user()->avatar }}"
                 alt="your avatar"
                 class="rounded-full mr-2"
                 width="50"
                 height="50"
-            >
+                >
+
+                <label for="image" class="cursor-pointer ml-4 mt-8">
+                    <i class="fas fa-image text-blue-600 text-2xl"></i>
+                </label>
+
+                <input class="hidden"
+                       type="file"
+                       name="image"
+                       id="image"
+                       accept="image/*"
+                >
+            </div>
 
             <button
                 type="submit"

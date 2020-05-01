@@ -19,11 +19,18 @@ class TweetsController extends Controller
     {
         $attributes = request()->validate([
             'body' => 'required|max:255',
+            'image' => 'nullable|image|dimensions:min_width=100,min_height=200',
         ]);
+
+        // if has image, create repo in storage
+        if(request('image')) {
+            $attributes['image'] = request('image')->store('images');
+        }
 
         Tweet::create([
             'user_id' => auth()->id(),
             'body' => $attributes['body'],
+            'image' => !is_null((request('image')) ? $attributes['image'] : null),
         ]);
 
         return redirect()->route('home');

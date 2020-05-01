@@ -34,7 +34,7 @@ class ProfilesController extends Controller
                 Rule::unique('users')->ignore($user),
             ],
             'name' => ['string', 'required', 'max:255'],
-            'description' => ['string'],
+            'description' => ['nullable','string'],
             'avatar' => ['image', 'dimensions:min_width=100,min_height=200'],
             'background' => ['image', 'dimensions:min_width=100,min_height=200'],
             'email' => [

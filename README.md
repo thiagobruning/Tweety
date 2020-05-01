@@ -5,7 +5,7 @@ This is the repository for the "Laravel From Scratch" [final project](https://la
 ## Recommended Additions
 
 1. ~~The profile page banner image and description are hard-coded. Make these dynamic for each user.~~
-2. Add the ability to attach an image when publishing a tweet.
+2. ~~Add the ability to attach an image when publishing a tweet.~~
 3. There is currently no way to unlike a tweet. Add the ability to toggle a like.
 4. Add a pop-up flash message when a user publishes a tweet or follows someone.
 5. Consider adding [Laravel Livewire](https://laravel-livewire.com) to allow for more interactive forms.

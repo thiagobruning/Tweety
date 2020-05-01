@@ -55,7 +55,6 @@
                    name="description"
                    id="description"
                    value="{{ $user->description }}"
-                   required
             >
 
             @error('description')
