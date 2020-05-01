@@ -30,7 +30,7 @@ class TweetsController extends Controller
         Tweet::create([
             'user_id' => auth()->id(),
             'body' => $attributes['body'],
-            'image' => !is_null((request('image')) ? $attributes['image'] : null),
+            'image' => (!is_null(request('image')) ? $attributes['image'] : null),
         ]);
 
         return redirect()->route('home');
